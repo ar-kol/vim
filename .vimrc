@@ -210,7 +210,7 @@ endif
 
 try
     colorscheme desert
-    highlight Search guibg='Purple' guifg="NONE"
+    highlight Search guibg='Purple' guifg='NONE'
 catch
 endtry
 

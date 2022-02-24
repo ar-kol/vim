@@ -40,14 +40,17 @@ nnoremap <F2> :ls<CR>:buffer<Space>
 nnoremap <F3> :bro ol<CR>
 nnoremap <F4> :update<CR>
 inoremap <F4> <Esc>:update<CR>i
+nnoremap <F5> o<Esc>0"_D
 
 let mapleader = " "
 nnoremap <leader>f :set fdm=syntax<CR>zM
+nnoremap <leader>w "+yiw
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>d "+d
 vnoremap <leader>d "+d
-nnoremap <leader>p "+<S-P>
+vnoremap <leader>p "+p
+nnoremap <leader>P "+<S-P>
 nnoremap <leader>zz :q!<CR>
 
 
@@ -112,10 +115,10 @@ au FocusGained,BufEnter * checktime
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
+" let mapleader = ","
 
 " Fast saving
-nmap <leader>w :w!<cr>
+" nmap <leader>w :w!<cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
@@ -209,7 +212,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme darkblue
     highlight Search guibg='Purple' guifg='NONE'
 catch
 endtry
@@ -220,6 +223,7 @@ set background=dark
 if has("gui_running")
     set guioptions-=T
     set guioptions-=e
+    set guioptions-=m
     set t_Co=256
     set guitablabel=%M\ %t
 endif
@@ -275,8 +279,8 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <C-space> ?
+" map <space> /
+" map <C-space> ?
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
